@@ -2,7 +2,7 @@ organization := "me.lessis"
 
 name := "courier"
 
-version := "0.1.4-SNAPSHOT"
+version := "0.2.0"
 
 description := "deliver electronic mail with scala"
 
