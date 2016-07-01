@@ -17,7 +17,7 @@ libraryDependencies += "dka" %% "courier" % "0.2.1"
 Note. If you are a [bintray-sbt](https://github.com/softprops/bintray-sbt#readme) user you can optionally specify the resolver as
 
 ```scala
-resolvers += bintray.Opts.resolver.repo("softprops", "maven")
+resolvers += bintray.Opts.resolver.repo("dka", "oss")
 ```
 
 ## usage
