@@ -1,4 +1,5 @@
 import javax.mail.internet.InternetAddress
+import scala.language.implicitConversions
 
 /** An agreeable email interface for scala. */
 package object courier {

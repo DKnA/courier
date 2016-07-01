@@ -9,14 +9,10 @@ deliver electronic mail with scala from the [future](http://www.scala-lang.org/a
 Via the copy and paste method
 
 ```scala
-resolvers += "softprops-maven" at "http://dl.bintray.com/content/softprops/maven"
+resolvers += "dka-oss-maven" at "https://dl.bintray.com/dka/oss"
 
-libraryDependencies += "me.lessis" %% "courier" % "0.1.4"
+libraryDependencies += "dka" %% "courier" % "0.2.1"
 ```
-
-Via [a more civilized method](https://github.com/softprops/ls#readme) which will do the same without all the manual work.
-
-    > ls-install courier
 
 Note. If you are a [bintray-sbt](https://github.com/softprops/bintray-sbt#readme) user you can optionally specify the resolver as
 
@@ -88,10 +84,12 @@ class MailSpec extends Specification with NoTimeConversions {
           val momsMsg = momsInbox.get(0)
           momsMsg.getContent === "hi mom"
           momsMsg.getSubject === "miss you"
-        }       	  	}  }
+        }       	
+  	}
+  }
 }        
 ```
 
 [Here](https://weblogs.java.net/blog/2007/04/26/introducing-mock-javamail-project) is an excellent article on using Mock JavaMail.
 
-Doug Tangren (softprops) 2013
+Original work by Doug Tangren (@softprops) 2013

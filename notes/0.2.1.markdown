@@ -1,0 +1,7 @@
+# fixes
+
+Merged all community suggested pull requests on original repository
+* The reply-to address was not being sent [laurencer][https://github.com/laurencer]
+* Optional charset for email subject
+* Mail session should use system properties initially
+* Adding support for SSL/TLS

@@ -1,8 +1,8 @@
-organization := "me.lessis"
+organization := "dka"
 
 name := "courier"
 
-version := "0.2.0"
+version := "0.2.1"
 
 description := "deliver electronic mail with scala"
 
@@ -11,34 +11,34 @@ libraryDependencies ++= Seq(
   "javax.activation"  % "activation"  % "1.1.1"
 )
 
+scalacOptions ++= Seq(
+  "-feature"
+)
+
 licenses := Seq(
-  ("MIT", url(s"https://github.com/softprops/${name.value}/blob/${version.value}/LICENSE")))
+  ("MIT", url(s"https://github.com/DKnA/${name.value}/blob/${version.value}/LICENSE")))
 
-homepage := Some(url(s"https://github.com/softprops/${name.value}/#readme"))
+homepage := Some(url(s"https://github.com/DKnA/${name.value}/#readme"))
 
-crossScalaVersions := Seq("2.10.4", "2.11.1")
+crossScalaVersions := Seq("2.10.4", "2.11.8")
 
 scalaVersion := crossScalaVersions.value.last
 
-seq(bintraySettings:_*)
+bintrayPackageLabels := Seq("email", "mail", "javamail")
 
-bintray.Keys.packageLabels in bintray.Keys.bintray := Seq("email", "mail", "javamail")
+bintrayOrganization := Some("dka")
 
-seq(lsSettings:_*)
-
-LsKeys.tags in LsKeys.lsync := (bintray.Keys.packageLabels in bintray.Keys.bintray).value
-
-externalResolvers in LsKeys.lsync := (resolvers in bintray.Keys.bintray).value
+bintrayRepository := "oss"
 
 pomExtra := (
   <scm>
-    <url>git@github.com:softprops/courier.git</url>
-    <connection>scm:git:git@github.com:softprops/courier.git</connection>
+    <url>git@github.com:DKnA/courier.git</url>
+    <connection>scm:git:git@github.com:DKnA/courier.git</connection>
   </scm>
   <developers>
     <developer>
-      <id>softprops</id>
-      <name>Doug Tangren</name>
-      <url>https://github.com/softprops</url>
+      <id>dka</id>
+      <name>Dunning, Kruger &amp; Associates</name>
+      <url>https://github.com/DKnA</url>
     </developer>
   </developers>)
