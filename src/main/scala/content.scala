@@ -12,10 +12,11 @@ case class Text(body: String, charset: Charset = Charset.defaultCharset)
   extends Content
 
 case class Multipart(
+  _subType: String = "mixed",
   _parts: Seq[MimeBodyPart] = Seq.empty[MimeBodyPart])
   extends Content {
   def add(part: MimeBodyPart): Multipart =
-    Multipart(_parts :+ part)
+    Multipart(_subType, _parts :+ part)
   def add(
     bytes: Array[Byte],
     mimetype: String,
@@ -52,7 +53,7 @@ case class Multipart(
     })
 
   def parts =
-    new MimeMultipart() {
+    new MimeMultipart(_subType) {
       _parts.foreach(addBodyPart(_))
     }
 }

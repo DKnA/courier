@@ -24,7 +24,7 @@ case class Mailer(
       e.headers.foreach(h => addHeader(h._1, h._2))
       e.contents match {
         case Text(txt, charset) => setText(txt, charset.displayName)
-        case mp @ Multipart(_) => setContent(mp.parts)
+        case mp @ Multipart(_, _) => setContent(mp.parts)
       }
     }
     Future {
