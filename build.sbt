@@ -26,9 +26,9 @@ scalaVersion := crossScalaVersions.value.last
 
 bintrayPackageLabels := Seq("email", "mail", "javamail")
 
-bintrayOrganization := Some("kallebertell")
+bintrayOrganization := Some("dka")
 
-bintrayRepository := "dkaio"
+bintrayRepository := "oss"
 
 pomExtra := (
   <scm>
