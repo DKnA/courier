@@ -2,7 +2,7 @@ organization := "dka"
 
 name := "courier"
 
-version := "0.2.1"
+version := "0.2.2"
 
 description := "deliver electronic mail with scala"
 
