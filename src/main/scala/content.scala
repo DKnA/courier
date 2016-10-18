@@ -30,14 +30,19 @@ case class Multipart(
       name.map(setFileName(_))
     })
 
+  def content(str: String, mimeType: String) =
+    add(new MimeBodyPart {
+      setContent(str, mimeType)
+    })
+
   def text(str: String) =
     add(new MimeBodyPart {
-      setContent(str, "text/plain")
+      setContent(str, "text/plain; charset=UTF-8")
     })
 
   def html(str: String) =
     add(new MimeBodyPart {
-      setContent(str, "text/html")
+      setContent(str, "text/html; charset=UTF-8")
     })
 
   def attach(file: File, name: Option[String] = None) =
